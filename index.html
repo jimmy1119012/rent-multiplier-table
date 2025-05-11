@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>合理房价估算与租金倍数表</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>合理房价估算工具</title>
   <style>
     :root {
       --primary-color: #c8102e;
@@ -21,38 +21,50 @@
       color: var(--text-color);
       line-height: 1.8;
       font-size: 16px;
-      padding: 2rem;
+      padding-bottom: 3rem;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
+    nav {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    header h1 {
+    nav div:first-child {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav div:last-child {
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1.2rem;
+    }
+
+    h1, h2 {
       color: var(--primary-color);
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+      text-align: center;
     }
 
     section {
       background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
       border-left: 6px solid var(--primary-color);
       padding: 1.5rem 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
 
-    h2 {
-      color: var(--primary-color);
-      font-size: 1.4rem;
-      margin-top: 0;
-    }
-
     code {
       background-color: #eee;
-      padding: 2px 5px;
+      padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
     }
@@ -94,72 +106,71 @@
 </head>
 <body>
 
-<header>
+<nav>
+  <div>房价估值工具</div>
+  <div>基于租售比 · 投资 & 自住判断参考</div>
+</nav>
+
+<main>
   <h1>合理房价估算与租金倍数速查</h1>
-  <p style="color:#555">基于租售比分析与城市发展判断的买房工具</p>
-</header>
 
-<section>
-  <h2>📐 合理房价计算公式</h2>
-  <p><strong>合理租售比 = 持有成本 + 无风险收益率 + 风险溢价收益率</strong></p>
-  <ul>
-    <li>持有成本 ≈ 0.5%</li>
-    <li>无风险收益率 ≈ 2.3%</li>
-    <li>风险溢价 ≈ 1.5%</li>
-  </ul>
-  <p>因此，<strong>合理年租售比 ≈ 4.3%</strong></p>
-  <p>换算方式：</p>
-  <code>合理房价 = 年租金 ÷ 年租售比</code><br>
-  <code>或 = 月租金 × 月租倍数（240~400倍）</code>
-</section>
+  <section>
+    <h2>📐 合理房价计算公式</h2>
+    <p><strong>合理租售比 = 持有成本 + 无风险收益率 + 风险溢价收益率</strong></p>
+    <ul>
+      <li><strong>持有成本：</strong>包含物业费、维修费、空置期损耗等，通常为房价的 0.5%。</li>
+      <li><strong>无风险收益率：</strong>指将资金投入国债等低风险金融产品可获得的年化收益率。<br>
+          中国10年期国债当前收益率约为 <strong>2.3%</strong>，数据来源：
+          <a href="https://yield.chinabond.com.cn/" target="_blank">中国债券信息网</a>。
+      </li>
+      <li><strong>风险溢价：</strong>房产出租面临流动性差、贬值、租不出去等不确定性，因此投资人会要求 1%~2% 的额外收益作为补偿，本页面按 <strong>1.5%</strong> 计入。</li>
+    </ul>
+    <p>因此，<strong>合理年租售比 ≈ 0.5% + 2.3% + 1.5% = 4.3%</strong></p>
 
-<section>
-  <h2>🏠 买房应重点考察的七个维度</h2>
-  <ul>
-    <li><strong>租售比：</strong>年化回报是否 ≥3%</li>
-    <li><strong>房价收入比：</strong>家庭年收入 × 7 倍以内为合理</li>
-    <li><strong>人口趋势：</strong>是否是人口净流入区域</li>
-    <li><strong>产业支撑：</strong>是否有高校、科技园、总部等</li>
-    <li><strong>生活配套：</strong>地铁、学校、医院是否齐全</li>
-    <li><strong>库存去化周期：</strong>是否在6~12个月之间</li>
-    <li><strong>利率环境：</strong>是否处于低利率购房窗口</li>
-  </ul>
-</section>
+    <h3 style="margin-top:2rem;">🔢 换算方式</h3>
+    <p>当你知道一套房的年租金或月租金时，可估算它的“合理房价区间”：</p>
+    <ul>
+      <li><strong>按年：</strong> 合理房价 = 年租金 ÷ 年租售比</li>
+      <li><strong>按月：</strong> 合理房价 = 月租金 × 倍数（240 倍 ≈ 5%，300 倍 ≈ 4%，400 倍 ≈ 3%）</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>📊 租金倍数速查表</h2>
-  <table>
-    <caption>（月租金单位：元，房价单位：万元）</caption>
-    <tr>
-      <th>月租金</th>
-      <th>240倍（约5%）</th>
-      <th>300倍（约4%）</th>
-      <th>400倍（约3%）</th>
-    </tr>
-    <tr><td>1000</td><td>24</td><td>30</td><td>40</td></tr>
-    <tr><td>1500</td><td>36</td><td>45</td><td>60</td></tr>
-    <tr><td>2000</td><td>48</td><td>60</td><td>80</td></tr>
-    <tr><td>2500</td><td>60</td><td>75</td><td>100</td></tr>
-    <tr><td>3000</td><td>72</td><td>90</td><td>120</td></tr>
-    <tr><td>3500</td><td>84</td><td>105</td><td>140</td></tr>
-    <tr><td>4000</td><td>96</td><td>120</td><td>160</td></tr>
-    <tr><td>4500</td><td>108</td><td>135</td><td>180</td></tr>
-    <tr><td>5000</td><td>120</td><td>150</td><td>200</td></tr>
-  </table>
-</section>
+  <section>
+    <h2>📊 租金倍数速查表</h2>
+    <table>
+      <caption>（月租金单位：元，房价单位：万元）</caption>
+      <tr>
+        <th>月租金</th>
+        <th>240倍（约5%）</th>
+        <th>300倍（约4%）</th>
+        <th>400倍（约3%）</th>
+      </tr>
+      <tr><td>1000</td><td>24</td><td>30</td><td>40</td></tr>
+      <tr><td>1500</td><td>36</td><td>45</td><td>60</td></tr>
+      <tr><td>2000</td><td>48</td><td>60</td><td>80</td></tr>
+      <tr><td>2500</td><td>60</td><td>75</td><td>100</td></tr>
+      <tr><td>3000</td><td>72</td><td>90</td><td>120</td></tr>
+      <tr><td>3500</td><td>84</td><td>105</td><td>140</td></tr>
+      <tr><td>4000</td><td>96</td><td>120</td><td>160</td></tr>
+      <tr><td>4500</td><td>108</td><td>135</td><td>180</td></tr>
+      <tr><td>5000</td><td>120</td><td>150</td><td>200</td></tr>
+    </table>
+  </section>
 
-<section>
-  <h2>📌 使用建议</h2>
-  <ul>
-    <li><strong>240倍：</strong>适合高回报投资，回本快但风险高</li>
-    <li><strong>300倍：</strong>合理回报+稳健保值，适合长持</li>
-    <li><strong>400倍：</strong>更适合刚需自住、低波动保值</li>
-  </ul>
-  <p><strong>判断公式：</strong>如果房价 > 月租 × 400，投资价值较差；如果 < 月租 × 300，具有投资吸引力。</p>
-</section>
+  <section>
+    <h2>📌 使用建议</h2>
+    <ul>
+      <li><strong>240倍：</strong>适合高回报投资，回本快但风险高</li>
+      <li><strong>300倍：</strong>合理回报+稳健保值，适合长持</li>
+      <li><strong>400倍：</strong>更适合刚需自住、低波动保值</li>
+    </ul>
+    <p><strong>判断逻辑：</strong>如果房价 > 月租 × 400，投资价值较差；如果 < 月租 × 300，具有投资吸引力。</p>
+  </section>
+
+</main>
 
 <footer>
-  页面设计参考《经济学人》简洁风格 ｜ 最后更新：2025年5月
+  页面设计参考《经济学人》 ｜ 最后更新：2025年5月
 </footer>
 
 </body>
